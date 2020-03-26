@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.universal.best.habittracker.repository.entity.ActivityEntityClass" />
+
+        <variable
+                name="myclickHanlder"
+                type="com.universal.best.habittracker.view.adapter.ActivityListAdapter.MyClickHandler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/itemview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+                android:id="@+id/Yoga"
+                android:layout_width="123dp"
+                android:layout_height="174dp"
+                android:background="@drawable/activity_item_background_color"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="@{model.activityName}"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Yoga" />
+
+        <ImageView
+                android:onClick="@{(view)->myclickHanlder.onclick(view,model)}"
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="144dp"
+                android:layout_marginRight="144dp"
+                app:layout_constraintEnd_toEndOf="@+id/Yoga"
+                app:layout_constraintHorizontal_bias="0.294"
+                app:layout_constraintStart_toStartOf="@+id/Yoga"
+                app:layout_constraintTop_toBottomOf="@+id/Yoga"
+                app:srcCompat="@drawable/deleete" />
+
+        <ImageView
+
+                android:onClick="@{(view)->myclickHanlder.onclick(view,model)}"
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/Yoga"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/Yoga"
+                app:layout_constraintTop_toBottomOf="@+id/Yoga"
+                app:srcCompat="@drawable/chart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

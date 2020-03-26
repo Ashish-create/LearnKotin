@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+        name="clickHandler"
+        type="com.universal.best.habittracker.view.AddActivityDialogueFragment.MyClickHandler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <EditText
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:hint="Enter the Habit You want TO track"
+                android:textColor="#FFFF"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <com.squareup.timessquare.CalendarPickerView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Choose your range"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Button
+                android:onClick="@{(view)->clickHandler.onCLick(view)}"
+                android:id="@+id/button"
+                android:layout_width="185dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
